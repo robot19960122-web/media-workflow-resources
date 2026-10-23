@@ -1,0 +1,8 @@
+**
+!Dockerfile
+!packages/
+!packages/media-review-records/
+!packages/media-review-records/cli.mjs
+!packages/media-review-records/review.mjs
+!packages/media-review-records/templates.mjs
+!packages/media-review-records/LICENSE

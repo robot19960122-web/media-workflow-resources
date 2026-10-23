@@ -1,0 +1,19 @@
+{
+  "name": "@robot1996/media-review-records",
+  "version": "0.1.0",
+  "description": "Offline JSON review-record validation and version/scope status reports for media QA. No media scanning or AI inference.",
+  "type": "module",
+  "exports": { ".": { "types": "./review.d.mts", "import": "./review.mjs" } },
+  "types": "./review.d.mts",
+  "bin": { "media-review-records": "./cli.mjs" },
+  "files": ["review.mjs", "review.d.mts", "templates.mjs", "cli.mjs", "README.md", "LICENSE"],
+  "scripts": { "test": "node --test test.mjs", "prepublishOnly": "npm test" },
+  "engines": { "node": ">=22" },
+  "license": "MIT",
+  "author": "robot1996",
+  "homepage": "https://github.com/robot19960122-web/media-workflow-resources",
+  "repository": { "type": "git", "url": "git+https://github.com/robot19960122-web/media-workflow-resources.git", "directory": "packages/media-review-records" },
+  "bugs": "https://github.com/robot19960122-web/media-workflow-resources/issues",
+  "keywords": ["media", "qa", "review", "json", "cli", "evidence"],
+  "publishConfig": { "access": "public", "registry": "https://registry.npmjs.org/" }
+}
