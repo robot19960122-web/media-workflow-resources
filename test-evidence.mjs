@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { outcomeFor } from './review-evidence.mjs';
+const required = { scope: 'export-playback', artifactVersion: 'clip-v3' };
+const observed = { ...required, observed: true, outcome: 'pass' };
+test('missing observation remains untested', () => assert.equal(outcomeFor(required, null), 'untested'));
+test('truthy strings are not observed evidence', () => assert.equal(outcomeFor(required, { ...observed, observed: 'true' }), 'untested'));
+test('another version is stale, not accepted', () => assert.equal(outcomeFor(required, { ...observed, artifactVersion: 'clip-v2' }), 'stale'));
+test('metadata cannot prove export playback', () => assert.equal(outcomeFor(required, { ...observed, scope: 'metadata' }), 'insufficient'));
+test('explicit pass and fail survive only matching scope and version', () => { assert.equal(outcomeFor(required, observed), 'pass'); assert.equal(outcomeFor(required, { ...observed, outcome: 'fail' }), 'fail'); });
+test('unknown outcomes are not converted into a pass', () => assert.equal(outcomeFor(required, { ...observed, outcome: 'probably fine' }), 'unknown'));
+test('requirements must be explicit', () => { assert.throws(() => outcomeFor({}, observed), TypeError); assert.throws(() => outcomeFor({ scope: ' ', artifactVersion: 'v3' }, observed), TypeError); });
