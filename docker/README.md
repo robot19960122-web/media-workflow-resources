@@ -4,6 +4,14 @@ Offline JSON checklist and review-record validation for music removal, transpare
 
 ## Build and use
 
+Published image: [wenwell/media-review-records](https://hub.docker.com/r/wenwell/media-review-records), tags `0.1.0` and `latest`. Index digest: `sha256:7968229fbd3fecd78dd25b764ff21388c438affd194564f418c6ec6f799ef6a9`. Anonymous metadata, ARM64 pull and runtime verified; AMD64 runtime tested under emulation. Use the versioned name below instead of the local image name to run the registry artifact:
+
+```sh
+docker pull wenwell/media-review-records:0.1.0
+docker run --rm --read-only --network none --cap-drop ALL \
+  --security-opt no-new-privileges:true wenwell/media-review-records:0.1.0 --help
+```
+
 ```sh
 docker build -t media-review-records:0.1.0 .
 docker run --rm --read-only --network none --cap-drop ALL \

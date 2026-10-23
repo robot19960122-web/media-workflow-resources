@@ -32,3 +32,12 @@ Seven tests cover the bookkeeping branches. A returned `pass` means only that th
 ## Installable utility and container source
 
 [`packages/media-review-records`](packages/media-review-records) contains the zero-dependency ESM/CLI utility, strict JSON document validation, four templates, TypeScript declarations and tests. [`docker/README.md`](docker/README.md) describes offline, non-root, read-only use. A manifest or Dockerfile alone is not proof of registry publication: published URLs/digests are added only after verification.
+
+The [Docker Hub image](https://hub.docker.com/r/wenwell/media-review-records) is published as `0.1.0` and `latest`, with Linux AMD64 and ARM64 runtime images. Verified index digest: `sha256:7968229fbd3fecd78dd25b764ff21388c438affd194564f418c6ec6f799ef6a9`. Anonymous metadata and an anonymous ARM64 pull/run were checked on 2026-10-24 (Beijing); AMD64 runtime was tested under emulation, not native hardware. Provenance entries are not additional runnable platforms. Publication does not establish search indexing or referral performance.
+
+The [npm package](https://www.npmjs.com/package/@robot1996/media-review-records) `@robot1996/media-review-records@0.1.0` is also public. The registry version timestamp is `2026-10-23T16:21:53.119Z` (2026-10-24 in Beijing). Anonymous metadata confirmed publisher `robot1996`, the four contextual npm-source product links and tarball SHA1 `a9201cad1cc13d07516399a9df7b588b97e0e29d`; a fresh registry install, installed CLI and ESM import passed.
+
+```sh
+npm install @robot1996/media-review-records@0.1.0
+npx media-review-records --help
+```
