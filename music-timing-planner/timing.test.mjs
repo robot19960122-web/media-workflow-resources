@@ -1,0 +1,6 @@
+import {test} from 'node:test';import assert from'node:assert/strict';import{planTiming,continuationEnd}from'./timing.mjs';
+test('30-second extension at120BPM is3.75four-bar phrases',()=>{const r=planTiming({sourceSeconds:60,targetSeconds:90,bpm:120});assert.equal(r.action,'extend');assert.equal(r.phraseSeconds,8);assert.equal(r.phraseCount,3.75);assert.equal(r.remainderSeconds,6)});
+test('shortening and exact match retain action sign',()=>{assert.equal(planTiming({sourceSeconds:90,targetSeconds:60,bpm:120}).action,'shorten');assert.equal(planTiming({sourceSeconds:60,targetSeconds:60,bpm:120}).phraseCount,0)});
+test('supports3/4and fractional tempo',()=>{assert.equal(planTiming({sourceSeconds:30,targetSeconds:54,bpm:60,beatsPerBar:3,barsPerPhrase:8}).phraseSeconds,24);assert.ok(planTiming({sourceSeconds:30,targetSeconds:40,bpm:119.5}).phraseSeconds>8)});
+test('rejects invalid inputs',()=>{for(const n of[0,-1,NaN,Infinity,'120'])assert.throws(()=>planTiming({sourceSeconds:60,targetSeconds:90,bpm:n}),RangeError);assert.throws(()=>planTiming({sourceSeconds:60,targetSeconds:90,bpm:120,barsPerPhrase:1.5}),RangeError)});
+test('continuation endpoint does not add full original source',()=>{assert.equal(continuationEnd(45,30),75);assert.equal(continuationEnd(0,15),15);assert.throws(()=>continuationEnd(-1,30),RangeError)});

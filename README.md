@@ -1,6 +1,6 @@
 # Media workflow review resources
 
-Four practical checklists for evaluating media-processing results before publishing them. These are brand-authored resources prepared for the products named below, with AI assistance; they are not independent reviews, benchmarks, promises of compatibility or endorsements by GitHub.
+Practical checklists and a music-timing calculator for evaluating media-processing results before publishing them. These are brand-authored resources prepared for the products named below, with AI assistance; they are not independent reviews, benchmarks, promises of compatibility or endorsements by GitHub.
 
 - [Music removal: compare what remains](removebackgroundmusic-review.md)
 - [Transparent web video: test delivery, not only the mask](alphapublish-delivery.md)
@@ -41,3 +41,9 @@ The [npm package](https://www.npmjs.com/package/@robot1996/media-review-records)
 npm install @robot1996/media-review-records@0.1.0
 npx media-review-records --help
 ```
+
+## Music timing planner (2026-11-22)
+
+[Music Timing Planner](music-timing-planner/) is an offline, self-contained browser worksheet for cue/scene duration gaps and musical phrase lengths. Download `music-timing-planner/index.html` to use it without an account. The companion JavaScript module and five tests cover timing arithmetic; this tool does not detect beats, edit audio or establish music quality.
+
+Prepared by the [AI Music Extender](https://aimusicextender.net/?utm_source=github&utm_medium=referral&utm_campaign=resource_guides_202611&utm_content=resource_repository) team with AI assistance. Hosted AI continuation and Smart Fit processing are separate paid services. This folder contains no production application source, customer files or credentials.
