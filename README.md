@@ -6,6 +6,7 @@ Practical checklists and a music-timing calculator for evaluating media-processi
 - [Transparent web video: test delivery, not only the mask](alphapublish-delivery.md)
 - [Speech cleanup: compare noise and voice together](noisevanish-listening.md)
 - [AI video checks: record evidence and uncertainty](aivideodetector-evidence.md)
+- [One-lyric edit: a blank listening-review kit](ai-lyrics-changer-review.md)
 
 ## How to use these resources
 
